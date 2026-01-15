@@ -1,0 +1,61 @@
+<div class="card">
+    <div class="card-header bg-primary text-white">
+        <h5 class="mb-0">
+            <i class="fas fa-file-medical"></i> Lab Report Status
+        </h5>
+    </div>
+    <div class="card-body">
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <strong>Patient:</strong> {{ lab_report.patient.get_display_name }}
+            </div>
+            <div class="col-md-6">
+                <strong>File:</strong> {{ lab_report.original_filename }}
+            </div>
+        </div>
+        
+        <div class="row mb-3">
+            <div class="col-md-6">
+                <strong>Uploaded:</strong> {{ lab_report.uploaded_at|date:"M d, Y H:i" }}
+            </div>
+            <div class="col-md-6">
+                <strong>Status:</strong>
+                <span class="status-badge status-{{ lab_report.status }}">
+                    {{ lab_report.get_status_display }}
+                </span>
+            </div>
+        </div>
+        
+        {% if lab_report.status == 'processing' %}
+        <div class="text-center my-4">
+            <div class="spinner-border text-primary" role="status">
+                <span class="visually-hidden">Processing...</span>
+            </div>
+            <p class="mt-3 text-muted">Analyzing lab report with AI...</p>
+        </div>
+        {% elif lab_report.status == 'completed' %}
+        <div class="alert alert-success">
+            <i class="fas fa-check-circle"></i> Analysis completed successfully!
+            {% if has_analysis and lab_report.analysis_result.has_critical %}
+            <div class="mt-2">
+                <strong class="text-danger">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    {{ lab_report.analysis_result.critical_flags }} Critical Finding(s) Detected!
+                </strong>
+            </div>
+            {% endif %}
+        </div>
+        {% elif lab_report.status == 'failed' %}
+        <div class="alert alert-danger">
+            <i class="fas fa-exclamation-circle"></i> Processing failed
+            {% if lab_report.error_message %}
+            <p class="mb-0 mt-2">{{ lab_report.error_message }}</p>
+            {% endif %}
+        </div>
+        {% else %}
+        <div class="alert alert-info">
+            <i class="fas fa-clock"></i> Waiting to be processed...
+        </div>
+        {% endif %}
+    </div>
+</div>

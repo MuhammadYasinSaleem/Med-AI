@@ -1,0 +1,28 @@
+{% extends 'base.html' %}
+
+{% block title %}Processing Status - Lab Report Analyzer{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h2 class="mb-4">
+            <i class="fas fa-hourglass-half text-primary"></i> Processing Status
+        </h2>
+        
+        <div id="status-card" 
+             hx-get="{% url 'lab_analyzer:status' lab_report.id %}"
+             hx-trigger="every 2s"
+             hx-swap="outerHTML">
+            {% include 'partials/status_card.html' %}
+        </div>
+        
+        {% if has_analysis %}
+        <div class="mt-4">
+            <a href="{% url 'lab_analyzer:results' lab_report.id %}" class="btn btn-success btn-lg w-100">
+                <i class="fas fa-chart-line"></i> View Results
+            </a>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
