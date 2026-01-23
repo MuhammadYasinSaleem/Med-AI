@@ -1,0 +1,1279 @@
+2026-01-10 20:24:49,714 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:25:42,586 - django.utils.autoreload - INFO - D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\medai\settings.py changed, reloading.
+2026-01-10 20:25:43,726 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:27:01,499 - django.utils.autoreload - INFO - D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\interviews\triage_agent.py changed, reloading.
+2026-01-10 20:27:02,527 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:32:22,879 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:32:59,887 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:38:15,788 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:38:38,555 - django.server - INFO - "GET / HTTP/1.1" 200 22170
+2026-01-10 20:38:40,221 - django.request - WARNING - Not Found: /favicon.ico
+2026-01-10 20:38:40,223 - django.server - WARNING - "GET /favicon.ico HTTP/1.1" 404 179
+2026-01-10 20:38:56,396 - django.server - INFO - "GET /medai/docs/ HTTP/1.1" 200 4673
+2026-01-10 20:38:56,614 - django.server - INFO - "GET /medai/schema/ HTTP/1.1" 200 19272
+2026-01-10 20:39:31,444 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-10 20:39:34,121 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent "HTTP/1.1 200 OK"
+2026-01-10 20:39:34,130 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-10 20:39:39,615 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-3-flash-preview:generateContent "HTTP/1.1 200 OK"
+2026-01-10 20:39:39,620 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 87
+2026-01-10 20:42:10,755 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 5438
+2026-01-10 20:42:36,379 - django.request - ERROR - Internal Server Error: /medai/interview/start/
+Traceback (most recent call last):
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\interviews\views.py", line 41, in post
+    greeting = initial_greeting(language=language)
+  File "D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\interviews\agent.py", line 40, in initial_greeting
+    response = model.generate_content(prompt)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 24.177283154s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 24
+}
+]
+2026-01-10 20:42:36,413 - django.server - ERROR - "POST /medai/interview/start/ HTTP/1.1" 500 145
+2026-01-10 20:44:22,127 - django.utils.autoreload - INFO - D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\interviews\agent.py changed, reloading.
+2026-01-10 20:44:26,078 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:44:42,424 - django.utils.autoreload - INFO - D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\interviews\agent.py changed, reloading.
+2026-01-10 20:44:44,719 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:45:58,257 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 20:46:10,563 - django.server - INFO - "GET /medai/docs/ HTTP/1.1" 200 4673
+2026-01-10 20:46:10,721 - django.server - INFO - "GET /medai/schema/ HTTP/1.1" 200 19272
+2026-01-10 20:46:21,643 - django.request - ERROR - Internal Server Error: /medai/interview/start/
+Traceback (most recent call last):
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\interviews\views.py", line 41, in post
+    greeting = initial_greeting(language=language)
+  File "D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\interviews\agent.py", line 45, in initial_greeting
+    response = model.generate_content(prompt)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 38.913833957s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 38
+}
+]
+2026-01-10 20:46:21,679 - django.server - ERROR - "POST /medai/interview/start/ HTTP/1.1" 500 145
+2026-01-10 20:47:04,925 - django.request - ERROR - Internal Server Error: /medai/medication_interaction/analyze_interaction/
+Traceback (most recent call last):
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\decorators\csrf.py", line 65, in _view_wrapper
+    return view_func(request, *args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\django\views\generic\base.py", line 104, in view
+    return self.dispatch(request, *args, **kwargs)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+    ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+  File "D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\medication_interaction\views.py", line 35, in post
+    analysis = medication_interaction_agent(
+        {"age": data['patient_age'], "conditions": data['conditions']},
+        data['medications']
+    )
+  File "D:\Ai Hackaton\ai-hackathon-techverse2-team-delta\medai\medication_interaction\agent.py", line 45, in medication_interaction_agent
+    response = model.generate_content(
+        prompt,
+        generation_config={"response_mime_type": "application/json"}
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\generativeai\generative_models.py", line 331, in generate_content
+    response = self._client.generate_content(
+        request,
+        **request_options,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\ai\generativelanguage_v1beta\services\generative_service\client.py", line 835, in generate_content
+    response = rpc(
+        request,
+    ...<2 lines>...
+        metadata=metadata,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\gapic_v1\method.py", line 131, in __call__
+    return wrapped_func(*args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 294, in retry_wrapped_func
+    return retry_target(
+        target,
+    ...<3 lines>...
+        on_error=on_error,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 156, in retry_target
+    next_sleep = _retry_error_helper(
+        exc,
+    ...<6 lines>...
+        timeout,
+    )
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_base.py", line 214, in _retry_error_helper
+    raise final_exc from source_exc
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\retry\retry_unary.py", line 147, in retry_target
+    result = target()
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\timeout.py", line 130, in func_with_timeout
+    return func(*args, **kwargs)
+  File "C:\Users\Hafiz Fast\AppData\Local\Packages\PythonSoftwareFoundation.Python.3.13_qbz5n2kfra8p0\LocalCache\local-packages\Python313\site-packages\google\api_core\grpc_helpers.py", line 77, in error_remapped_callable
+    raise exceptions.from_grpc_error(exc) from exc
+google.api_core.exceptions.ResourceExhausted: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 55.632077315s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 55
+}
+]
+2026-01-10 20:47:04,946 - django.server - ERROR - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 500 145
+2026-01-10 21:33:51,548 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 21:34:44,311 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 21:36:13,232 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\medai\interviews\triage_agent.py changed, reloading.
+2026-01-10 21:36:15,914 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 21:37:01,913 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\medai\interviews\triage_agent.py changed, reloading.
+2026-01-10 21:37:05,045 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 21:38:01,270 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 21:38:59,078 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\medai\medai\settings.py changed, reloading.
+2026-01-10 21:39:02,473 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 21:39:52,675 - django.server - INFO - "GET / HTTP/1.1" 200 22077
+2026-01-10 21:41:00,087 - django.server - INFO - "OPTIONS /medai/interview/triage/ HTTP/1.1" 200 0
+2026-01-10 21:41:05,554 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 91
+2026-01-10 21:44:42,714 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 21:45:00,531 - django.server - INFO - "GET / HTTP/1.1" 200 22077
+2026-01-10 21:45:46,313 - lab_analyzer.ai_agents.reasoning - INFO - Using Gemini model: gemini-2.5-flash
+2026-01-10 21:45:46,314 - lab_analyzer.ai_agents.reasoning - INFO - Gemini API initialized successfully
+2026-01-10 21:46:05,208 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "tests": [
+    {
+      "test_name": "Hemoglobin",
+      "value": "14.5",
+      "unit": "g/dL",
+      "reference_range": "13.0 - 16.5",
+      "flag": "NORMAL"
+    },
+    {
+      "test_name": "RBC Count",
+      "value": "4.79",
+      "unit": "million/cmm",
+      "reference_range": "4.5 - 5.5",
+      "flag": "NORMAL"
+    },
+    {
+      "test_name": "Hematocrit",
+      "value": "43.3",
+      "unit": "%",
+      "reference_range": "40 - 49",
+      "flag": "NORMAL"
+    },
+    {
+      "test_name": "
+2026-01-10 21:46:05,213 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 3604 chars
+2026-01-10 21:46:20,257 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "critical_findings": [],
+  "abnormal_findings": [
+    {
+      "test": "WBC Count",
+      "value": "10570 /cmm",
+      "reference_range": "4000 - 10000",
+      "severity": "HIGH",
+      "explanation": "An elevated white blood cell count can indicate the body is responding to a process."
+    },
+    {
+      "test": "Lymphocytes",
+      "value": "19 %",
+      "reference_range": "20 - 40",
+      "severity": "LOW",
+      "explanation": "A low percentage of lymphocytes may warrant further evaluatio
+2026-01-10 21:46:20,262 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 1937 chars
+2026-01-10 21:46:23,101 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): Overall, your lab results show that most of your values are within the expected ranges, which is good. We did note that your WBC Count is a little elevated, which often means your body is responding to something, and your Lymphocytes percentage is a bit low, which might be something to keep an eye on.
+2026-01-10 21:46:23,104 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 302 chars
+2026-01-10 21:46:27,016 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "subjective": "Lab reports for Hassan Khan, a 13-year-old male, are being reviewed.",
+  "objective": "Objective findings include an elevated white blood cell count of 10570 /cmm and a low lymphocyte percentage of 19%.",
+  "assessment": "The presence of an elevated white blood cell count and a low lymphocyte percentage indicates a need for further clinical correlation.",
+  "plan": "Further evaluation of these findings is recommended to understand the underlying process."
+}
+2026-01-10 21:46:27,019 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 480 chars
+2026-01-10 21:46:27,021 - lab_analyzer.ai_agents.reasoning - DEBUG - Extracted values response length: 3604
+2026-01-10 21:46:27,022 - lab_analyzer.ai_agents.reasoning - DEBUG - Analysis result response length: 1937
+2026-01-10 21:46:27,022 - lab_analyzer.ai_agents.reasoning - DEBUG - SOAP note response length: 480
+2026-01-10 21:46:28,956 - django.server - INFO - "POST /api/upload/ HTTP/1.1" 200 140
+2026-01-10 21:46:31,096 - django.server - INFO - "GET /api/results/36692204-3664-4e81-a560-8b5721ad10e2/ HTTP/1.1" 200 2711
+2026-01-10 21:48:19,472 - django.server - INFO - "GET /results/36692204-3664-4e81-a560-8b5721ad10e2/download/ HTTP/1.1" 200 3715
+2026-01-10 21:48:51,012 - django.server - INFO - "OPTIONS /medai/interview/triage/ HTTP/1.1" 200 0
+2026-01-10 21:48:55,192 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 72
+2026-01-10 21:49:57,601 - django.server - INFO - "OPTIONS /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 0
+2026-01-10 21:50:17,334 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 4300
+2026-01-10 22:16:55,044 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 22:25:56,477 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\urls.py changed, reloading.
+2026-01-10 22:26:01,587 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 22:28:37,218 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-10 22:28:47,071 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-10 22:29:10,798 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-10 22:29:13,817 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-10 22:30:02,965 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 22:30:31,070 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-10 22:41:10,827 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 22:48:18,987 - django.server - INFO - "OPTIONS /medai/conversation/start/ HTTP/1.1" 200 0
+2026-01-10 22:48:19,003 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 341
+2026-01-10 22:48:40,060 - django.server - INFO - "OPTIONS /medai/conversation/continue/ HTTP/1.1" 200 0
+2026-01-10 22:48:41,244 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 453
+2026-01-10 22:49:04,550 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 341
+2026-01-10 22:49:34,164 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 453
+2026-01-10 22:49:54,003 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 486
+2026-01-10 22:50:19,613 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 486
+2026-01-10 22:50:24,711 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 486
+2026-01-10 22:52:30,349 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 341
+2026-01-10 22:52:51,625 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 341
+2026-01-10 22:59:01,793 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py changed, reloading.
+2026-01-10 22:59:07,611 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 22:59:32,497 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py changed, reloading.
+2026-01-10 22:59:36,037 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 23:02:40,531 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 341
+2026-01-10 23:05:13,602 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-10 23:47:34,813 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 23:48:15,474 - lab_analyzer.ai_agents.reasoning - INFO - Using Gemini model: gemini-2.5-flash
+2026-01-10 23:48:15,475 - lab_analyzer.ai_agents.reasoning - INFO - Gemini API initialized successfully
+2026-01-10 23:48:16,784 - lab_analyzer.ai_agents.reasoning - ERROR - Gemini API error: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 43.027163359s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 43
+}
+]
+2026-01-10 23:48:16,788 - lab_analyzer.ai_agents.reasoning - ERROR - Error in reasoning agent: 429 You exceeded your current quota, please check your plan and billing details. For more information on this error, head to: https://ai.google.dev/gemini-api/docs/rate-limits. To monitor your current usage, head to: https://ai.dev/rate-limit. 
+* Quota exceeded for metric: generativelanguage.googleapis.com/generate_content_free_tier_requests, limit: 20, model: gemini-2.5-flash
+Please retry in 43.027163359s. [links {
+  description: "Learn more about Gemini API quotas"
+  url: "https://ai.google.dev/gemini-api/docs/rate-limits"
+}
+, violations {
+  quota_metric: "generativelanguage.googleapis.com/generate_content_free_tier_requests"
+  quota_id: "GenerateRequestsPerDayPerProjectPerModel-FreeTier"
+  quota_dimensions {
+    key: "model"
+    value: "gemini-2.5-flash"
+  }
+  quota_dimensions {
+    key: "location"
+    value: "global"
+  }
+  quota_value: 20
+}
+, retry_delay {
+  seconds: 43
+}
+]
+2026-01-10 23:48:18,393 - django.server - INFO - "POST /api/upload/ HTTP/1.1" 200 140
+2026-01-10 23:48:19,811 - django.server - INFO - "GET /api/results/91ba3646-d458-4fcf-a887-7460f32f9878/ HTTP/1.1" 200 798
+2026-01-10 23:50:59,371 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-10 23:51:23,393 - lab_analyzer.ai_agents.reasoning - INFO - Using Gemini model: gemini-2.5-flash
+2026-01-10 23:51:23,394 - lab_analyzer.ai_agents.reasoning - INFO - Gemini API initialized successfully
+2026-01-10 23:51:44,245 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "tests": [
+    {
+      "test_name": "Hemoglobin",
+      "value": "14.5",
+      "unit": "g/dL",
+      "reference_range": "13.0 - 16.5",
+      "flag": "NORMAL"
+    },
+    {
+      "test_name": "RBC Count",
+      "value": "4.79",
+      "unit": "million/cmm",
+      "reference_range": "4.5 - 5.5",
+      "flag": "NORMAL"
+    },
+    {
+      "test_name": "Hematocrit",
+      "value": "43.3",
+      "unit": "%",
+      "reference_range": "40 - 49",
+      "flag": "NORMAL"
+    },
+    {
+      "test_name": "
+2026-01-10 23:51:44,247 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 3886 chars
+2026-01-10 23:51:52,248 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "critical_findings": [],
+  "abnormal_findings": [
+    {
+      "test": "WBC Count",
+      "value": "10570 /cmm",
+      "reference_range": "4000 - 10000 /cmm",
+      "severity": "HIGH",
+      "explanation": "An elevated white blood cell count can indicate the body is responding to an event."
+    },
+    {
+      "test": "Lymphocytes",
+      "value": "19 %",
+      "reference_range": "20 - 40 %",
+      "severity": "LOW",
+      "explanation": "A low lymphocyte percentage may suggest a reduced immun
+2026-01-10 23:51:52,252 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 1986 chars
+2026-01-10 23:51:54,764 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): Overall, your lab results show many values are within the expected range. We did note that your WBC Count is a bit elevated, which often means your body is working to respond to something, and your Lymphocytes are slightly low, which can sometimes suggest a reduced immune response.
+2026-01-10 23:51:54,767 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 282 chars
+2026-01-10 23:51:58,766 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "subjective": "Patient Hassan kHan is a 34-year-old male with no specific subjective complaints provided.",
+  "objective": "Laboratory findings show an elevated white blood cell count (10570 /cmm) and a low lymphocyte percentage (19 %).",
+  "assessment": "The observed lab values suggest the body is responding to an event, with a potentially reduced immune response.",
+  "plan": "Further evaluation and clinical correlation are recommended to understand these findings."
+}
+2026-01-10 23:51:58,766 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 477 chars
+2026-01-10 23:51:58,767 - lab_analyzer.ai_agents.reasoning - DEBUG - Extracted values response length: 3886
+2026-01-10 23:51:58,767 - lab_analyzer.ai_agents.reasoning - DEBUG - Analysis result response length: 1986
+2026-01-10 23:51:58,767 - lab_analyzer.ai_agents.reasoning - DEBUG - SOAP note response length: 477
+2026-01-10 23:52:00,402 - django.server - INFO - "POST /api/upload/ HTTP/1.1" 200 140
+2026-01-10 23:52:01,842 - django.server - INFO - "GET /api/results/6e481386-1628-4dad-a0cd-f99de7e936c3/ HTTP/1.1" 200 2737
+2026-01-11 00:26:59,942 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:27:52,271 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:36:38,141 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:36:50,298 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 341
+2026-01-11 00:37:20,504 - django.server - INFO - "OPTIONS /medai/interview/start/ HTTP/1.1" 200 0
+2026-01-11 00:37:22,585 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 52
+2026-01-11 00:37:50,341 - django.server - INFO - "OPTIONS /medai/interview/answer/ HTTP/1.1" 200 0
+2026-01-11 00:37:52,916 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 70
+2026-01-11 00:38:05,614 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 53
+2026-01-11 00:38:23,341 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 56
+2026-01-11 00:39:06,337 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 80
+2026-01-11 00:39:36,089 - interviews.agent - ERROR - Error generating next question: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-01-11 00:39:36,296 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 72
+2026-01-11 00:40:26,029 - interviews.agent - ERROR - Error generating next question: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-01-11 00:40:26,044 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 63
+2026-01-11 00:40:26,059 - django.server - INFO - "OPTIONS /medai/interview/summary/ HTTP/1.1" 200 0
+2026-01-11 00:40:28,210 - interviews.agent - ERROR - Error generating SOAP note: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-01-11 00:40:29,465 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 441
+2026-01-11 00:42:01,319 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 52
+2026-01-11 00:42:14,240 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 00:42:21,510 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 00:42:42,273 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 00:42:51,608 - interviews.agent - ERROR - Error generating next question: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-01-11 00:42:51,819 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 69
+2026-01-11 00:43:04,231 - interviews.agent - ERROR - Error generating next question: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-01-11 00:43:04,240 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 63
+2026-01-11 00:43:06,340 - interviews.agent - ERROR - Error generating SOAP note: 400 API key not valid. Please pass a valid API key. [reason: "API_KEY_INVALID"
+domain: "googleapis.com"
+metadata {
+  key: "service"
+  value: "generativelanguage.googleapis.com"
+}
+, locale: "en-US"
+message: "API key not valid. Please pass a valid API key."
+]
+2026-01-11 00:43:07,763 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 434
+2026-01-11 00:44:01,250 - django.server - INFO - "OPTIONS /medai/interview/triage/ HTTP/1.1" 200 0
+2026-01-11 00:44:01,405 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:44:22,494 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:44:25,528 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:45:28,580 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 00:45:33,182 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:46:03,017 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:47:01,563 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\test_set_triage_agent.py changed, reloading.
+2026-01-11 00:47:06,163 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:47:18,566 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:48:48,060 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 00:48:54,491 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:49:52,270 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 00:49:55,278 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:50:09,305 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:51:52,778 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\api_key_manager.py changed, reloading.
+2026-01-11 00:51:57,980 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:52:26,230 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\api_key_manager.py changed, reloading.
+2026-01-11 00:52:29,444 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:52:55,511 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 00:52:58,732 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:53:19,411 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:54:00,600 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 00:54:05,204 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 00:54:17,369 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 00:56:26,747 - django.server - INFO - "OPTIONS /medai/conversation/start/ HTTP/1.1" 200 0
+2026-01-11 00:56:26,758 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 341
+2026-01-11 00:56:44,039 - django.server - INFO - "OPTIONS /medai/conversation/continue/ HTTP/1.1" 200 0
+2026-01-11 00:56:44,195 - medai.conversation_views - ERROR - Error in advanced orchestrator: 'APIKeyManager' object has no attribute 'keys'
+2026-01-11 00:56:44,731 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 453
+2026-01-11 00:57:19,445 - medai.conversation_views - ERROR - Error in advanced orchestrator: 'APIKeyManager' object has no attribute 'keys'
+2026-01-11 00:57:19,960 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 486
+2026-01-11 00:57:38,083 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 404
+2026-01-11 00:57:52,946 - django.server - INFO - "POST /medai/conversation/continue/ HTTP/1.1" 200 373
+2026-01-11 01:07:49,282 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:08:08,654 - django.request - ERROR - Internal Server Error: /medai/conversation/start/
+Traceback (most recent call last):
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py", line 96, in post
+    greeting = self._generate_natural_greeting()
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'StartConversationAPIView' object has no attribute '_generate_natural_greeting'
+2026-01-11 01:08:08,788 - django.server - ERROR - "POST /medai/conversation/start/ HTTP/1.1" 500 145
+2026-01-11 01:09:01,599 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py changed, reloading.
+2026-01-11 01:09:04,746 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:09:41,279 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py changed, reloading.
+2026-01-11 01:09:44,482 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:10:18,734 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 118
+2026-01-11 01:10:24,429 - medai.conversation_views - ERROR - Error in advanced orchestrator: 'APIKeyManager' object has no attribute 'keys'
+2026-01-11 01:10:25,260 - django.request - ERROR - Internal Server Error: /medai/conversation/continue/
+Traceback (most recent call last):
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py", line 166, in post
+    result = advanced_orchestrator.process_message(session.session_id, user_message)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\advanced_orchestrator.py", line 436, in process_message
+    triage_result = self.route_to_triage_agent(context)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\advanced_orchestrator.py", line 257, in route_to_triage_agent
+    triage_result = self.triage_orchestrator.handle_triage(context.symptoms)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\orchestrator.py", line 16, in handle_triage
+    return triage_patient(symptoms)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py", line 59, in triage_patient
+    llm_result = llm_triage(symptoms)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py", line 26, in llm_triage
+    max_attempts = len(api_key_manager.keys)
+                       ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'APIKeyManager' object has no attribute 'keys'. Did you mean: 'key'?
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\exception.py", line 55, in inner
+    response = get_response(request)
+               ^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\core\handlers\base.py", line 197, in _get_response
+    response = wrapped_callback(request, *callback_args, **callback_kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\views\decorators\csrf.py", line 56, in wrapper_view
+    return view_func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\django\views\generic\base.py", line 105, in view
+    return self.dispatch(request, *args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 515, in dispatch
+    response = self.handle_exception(exc)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 475, in handle_exception
+    self.raise_uncaught_exception(exc)
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 486, in raise_uncaught_exception
+    raise exc
+  File "C:\Users\Hassan Khan\AppData\Roaming\Python\Python312\site-packages\rest_framework\views.py", line 512, in dispatch
+    response = handler(request, *args, **kwargs)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py", line 225, in post
+    response_message, next_stage = self._process_message_fallback(session, user_message)
+                                   ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py", line 309, in _process_message_fallback
+    return self._perform_triage(session)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\conversation_views.py", line 408, in _perform_triage
+    triage_result = orchestrator.handle_triage(session.symptoms)
+                    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\orchestrator.py", line 70, in handle_triage
+    return self.triage_orchestrator.handle_triage(symptoms)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\orchestrator.py", line 16, in handle_triage
+    return triage_patient(symptoms)
+           ^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py", line 59, in triage_patient
+    llm_result = llm_triage(symptoms)
+                 ^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py", line 26, in llm_triage
+    max_attempts = len(api_key_manager.keys)
+                       ^^^^^^^^^^^^^^^^^^^^
+AttributeError: 'APIKeyManager' object has no attribute 'keys'. Did you mean: 'key'?
+2026-01-11 01:10:25,306 - django.server - ERROR - "POST /medai/conversation/continue/ HTTP/1.1" 500 145
+2026-01-11 01:11:10,169 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 01:11:15,540 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:11:43,850 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 01:11:45,994 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 01:11:46,016 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 107
+2026-01-11 01:17:46,704 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 01:17:53,472 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:18:05,358 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 01:18:08,186 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:18:20,649 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 01:18:23,498 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:18:35,901 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 01:18:38,995 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:19:20,465 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 01:19:22,980 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:23:50,279 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 01:23:53,219 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:25:33,880 - django.server - INFO - "OPTIONS /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 0
+2026-01-11 01:25:50,022 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 1532
+2026-01-11 01:30:21,747 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:31:17,940 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 1576
+2026-01-11 01:33:41,089 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:34:17,807 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 1366
+2026-01-11 01:36:43,565 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:37:34,397 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 1185
+2026-01-11 01:39:50,541 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 01:40:36,858 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 863
+2026-01-11 02:29:31,617 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 02:30:09,848 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 620
+2026-01-11 02:35:15,844 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 02:36:32,325 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 654
+2026-01-11 02:38:04,869 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\views.py changed, reloading.
+2026-01-11 02:38:10,623 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 02:39:45,426 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 44
+2026-01-11 02:39:45,433 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 560
+2026-01-11 02:41:20,166 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\views.py changed, reloading.
+2026-01-11 02:41:26,016 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 02:41:39,505 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 02:41:43,252 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 02:42:19,595 - medication_interaction.views - INFO - Calling medication interaction agent with 1 medications
+2026-01-11 02:42:19,595 - medication_interaction.agent - INFO - Analyzing interactions: 1 current meds, 0 new meds
+2026-01-11 02:42:19,596 - medication_interaction.agent - INFO - Current meds: Panadol
+2026-01-11 02:42:19,597 - medication_interaction.agent - INFO - New meds: None
+2026-01-11 02:42:19,598 - medication_interaction.agent - INFO - Calling Gemini API for medication interaction analysis
+2026-01-11 02:42:25,306 - medication_interaction.agent - INFO - Received response from AI (length: 761 chars)
+2026-01-11 02:42:25,308 - medication_interaction.agent - INFO - Parsed JSON successfully, keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 02:42:25,309 - medication_interaction.agent - INFO - Returning result with severity: NONE
+2026-01-11 02:42:25,310 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 02:42:25,311 - medication_interaction.views - INFO - Agent severity: NONE
+2026-01-11 02:42:25,507 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 45
+2026-01-11 02:42:25,524 - medication_interaction.views - INFO - Response data size: 708 bytes
+2026-01-11 02:42:25,525 - medication_interaction.views - INFO - Response severity: NONE
+2026-01-11 02:42:25,526 - medication_interaction.views - INFO - Response findings count: 2
+2026-01-11 02:42:25,547 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 02:42:25,563 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 693
+2026-01-11 02:49:18,458 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 02:52:15,603 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 02:52:18,772 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 02:52:50,476 - medication_interaction.views - INFO - Calling medication interaction agent with 1 medications
+2026-01-11 02:52:50,476 - medication_interaction.agent - INFO - Medication interaction check | Current: Panadol | New: None
+2026-01-11 02:52:54,208 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 02:53:07,279 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 02:53:07,297 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: MINOR
+2026-01-11 02:53:07,301 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 02:53:07,314 - medication_interaction.views - INFO - Agent severity: MINOR
+2026-01-11 02:53:07,597 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 46
+2026-01-11 02:53:07,599 - medication_interaction.views - INFO - Response data size: 857 bytes
+2026-01-11 02:53:07,600 - medication_interaction.views - INFO - Response severity: MINOR
+2026-01-11 02:53:07,600 - medication_interaction.views - INFO - Response findings count: 5
+2026-01-11 02:53:07,600 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 02:53:07,600 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 834
+2026-01-11 03:00:05,060 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 03:00:08,890 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:00:57,236 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 03:01:00,577 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:03:48,392 - medication_interaction.views - INFO - Calling medication interaction agent with 1 medications
+2026-01-11 03:03:48,393 - medication_interaction.agent - INFO - Medication interaction check | Current: Panadol | New: None
+2026-01-11 03:03:51,918 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 03:03:55,339 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 03:03:55,340 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: MINOR
+2026-01-11 03:03:55,349 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'findings', 'soap_note']
+2026-01-11 03:03:55,351 - medication_interaction.views - INFO - Agent severity: MINOR
+2026-01-11 03:03:55,551 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 47
+2026-01-11 03:03:55,551 - medication_interaction.views - INFO - Response data size: 434 bytes
+2026-01-11 03:03:55,551 - medication_interaction.views - INFO - Response severity: MINOR
+2026-01-11 03:03:55,551 - medication_interaction.views - INFO - Response findings count: 3
+2026-01-11 03:03:55,559 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 425
+2026-01-11 03:05:33,556 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 03:05:37,110 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:06:24,121 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medication_interaction\agent.py changed, reloading.
+2026-01-11 03:06:27,159 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:06:36,750 - medication_interaction.views - INFO - Calling medication interaction agent with 1 medications
+2026-01-11 03:06:36,750 - medication_interaction.agent - INFO - Medication interaction check | Current: Panadol | New: None
+2026-01-11 03:06:40,368 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 03:06:55,517 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 03:06:55,526 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: MINOR
+2026-01-11 03:06:55,539 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 03:06:55,542 - medication_interaction.views - INFO - Agent severity: MINOR
+2026-01-11 03:06:55,727 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 48
+2026-01-11 03:06:55,740 - medication_interaction.views - INFO - Response data size: 496 bytes
+2026-01-11 03:06:55,741 - medication_interaction.views - INFO - Response severity: MINOR
+2026-01-11 03:06:55,743 - medication_interaction.views - INFO - Response findings count: 2
+2026-01-11 03:06:55,744 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 03:06:55,750 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 481
+2026-01-11 03:08:02,793 - medication_interaction.views - INFO - Calling medication interaction agent with 1 medications
+2026-01-11 03:08:02,794 - medication_interaction.agent - INFO - Medication interaction check | Current: Panadol | New: None
+2026-01-11 03:08:05,721 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 03:08:17,430 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 03:08:17,431 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: MINOR
+2026-01-11 03:08:17,431 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 03:08:17,439 - medication_interaction.views - INFO - Agent severity: MINOR
+2026-01-11 03:08:17,633 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 49
+2026-01-11 03:08:17,633 - medication_interaction.views - INFO - Response data size: 364 bytes
+2026-01-11 03:08:17,633 - medication_interaction.views - INFO - Response severity: MINOR
+2026-01-11 03:08:17,633 - medication_interaction.views - INFO - Response findings count: 2
+2026-01-11 03:08:17,633 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 03:08:17,639 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 349
+2026-01-11 03:10:44,321 - medication_interaction.views - INFO - Calling medication interaction agent with 4 medications
+2026-01-11 03:10:44,323 - medication_interaction.agent - INFO - Medication interaction check | Current: Panadol, amoxicillin | New: metformin, heparin
+2026-01-11 03:10:47,402 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 03:10:54,164 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 03:10:54,168 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: MODERATE
+2026-01-11 03:10:54,169 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 03:10:54,169 - medication_interaction.views - INFO - Agent severity: MODERATE
+2026-01-11 03:10:54,368 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 50
+2026-01-11 03:10:54,385 - medication_interaction.views - INFO - Response data size: 1019 bytes
+2026-01-11 03:10:54,386 - medication_interaction.views - INFO - Response severity: MODERATE
+2026-01-11 03:10:54,398 - medication_interaction.views - INFO - Response findings count: 2
+2026-01-11 03:10:54,401 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 03:10:54,405 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 992
+2026-01-11 03:14:21,482 - medication_interaction.views - INFO - Calling medication interaction agent with 6 medications
+2026-01-11 03:14:21,483 - medication_interaction.agent - INFO - Medication interaction check | Current: Panadol, amoxicillin, ibuforen, aspirin | New: metformin, heparin
+2026-01-11 03:14:24,528 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 03:14:34,745 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 03:14:34,747 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: MAJOR
+2026-01-11 03:14:34,757 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 03:14:34,757 - medication_interaction.views - INFO - Agent severity: MAJOR
+2026-01-11 03:14:34,940 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 51
+2026-01-11 03:14:34,940 - medication_interaction.views - INFO - Response data size: 2075 bytes
+2026-01-11 03:14:34,940 - medication_interaction.views - INFO - Response severity: MAJOR
+2026-01-11 03:14:34,940 - medication_interaction.views - INFO - Response findings count: 4
+2026-01-11 03:14:34,954 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 03:14:34,956 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 2017
+2026-01-11 03:18:41,290 - django.server - INFO - "OPTIONS /medai/interview/triage/ HTTP/1.1" 200 0
+2026-01-11 03:18:46,595 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 03:18:50,064 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 03:18:50,091 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 80
+2026-01-11 03:20:13,227 - django.server - INFO - "OPTIONS /medai/interview/start/ HTTP/1.1" 200 0
+2026-01-11 03:20:17,895 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 69
+2026-01-11 03:20:32,535 - django.server - INFO - "OPTIONS /medai/interview/answer/ HTTP/1.1" 200 0
+2026-01-11 03:20:35,155 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 03:20:47,825 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 03:21:11,923 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 03:21:46,956 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 51
+2026-01-11 03:22:22,387 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 57
+2026-01-11 03:22:41,429 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 63
+2026-01-11 03:22:41,435 - django.server - INFO - "OPTIONS /medai/interview/summary/ HTTP/1.1" 200 0
+2026-01-11 03:23:00,082 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3462
+2026-01-11 03:27:46,637 - lab_analyzer.ai_agents.reasoning - INFO - Using Gemini model: gemini-2.5-flash
+2026-01-11 03:27:46,637 - lab_analyzer.ai_agents.reasoning - INFO - Gemini API initialized successfully
+2026-01-11 03:27:50,901 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "tests": [
+    {
+      "test_name": "WBC Count",
+      "value": "10570",
+      "unit": "/cmm",
+      "reference_range": "4000 - 10000",
+      "flag": "HIGH"
+    },
+    {
+      "test_name": "Lymphocytes",
+      "value": "19",
+      "unit": "%",
+      "reference_range": "20 - 40",
+      "flag": "LOW"
+    }
+  ]
+}
+2026-01-11 03:27:50,905 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 315 chars
+2026-01-11 03:27:55,512 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "critical_findings": [],
+  "abnormal_findings": [
+    {
+      "test": "WBC Count",
+      "value": "10570 /cmm",
+      "reference_range": "4000 - 10000 /cmm",
+      "severity": "HIGH",
+      "explanation": "An elevated WBC count can indicate the body is responding to an internal process."
+    },
+    {
+      "test": "Lymphocytes",
+      "value": "19 %",
+      "reference_range": "20 - 40 %",
+      "severity": "LOW",
+      "explanation": "A low percentage of lymphocytes may suggest a need for fu
+2026-01-11 03:27:55,519 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 555 chars
+2026-01-11 03:27:57,786 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): Overall, your lab results show a few things we'll want to note. Your WBC Count is a bit elevated, which can sometimes indicate your body is responding to an internal process, and your Lymphocytes are a little low, which we'll want to keep an eye on.
+2026-01-11 03:27:57,787 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 249 chars
+2026-01-11 03:28:02,070 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response (first 500 chars): {
+  "subjective": "Patient is a 20-year-old male, Hassan Khan, with no specific subjective complaints documented.",
+  "objective": "Lab results show an elevated WBC count (10570 /cmm) and a low percentage of lymphocytes (19%).",
+  "assessment": "These findings indicate some values outside the typical reference ranges, which may suggest the body is responding to an internal process.",
+  "plan": "Further clinical evaluation is recommended to interpret these findings in the context of the patient's
+2026-01-11 03:28:02,073 - lab_analyzer.ai_agents.reasoning - DEBUG - Gemini response length: 519 chars
+2026-01-11 03:28:02,074 - lab_analyzer.ai_agents.reasoning - DEBUG - Extracted values response length: 315
+2026-01-11 03:28:02,076 - lab_analyzer.ai_agents.reasoning - DEBUG - Analysis result response length: 555
+2026-01-11 03:28:02,077 - lab_analyzer.ai_agents.reasoning - DEBUG - SOAP note response length: 519
+2026-01-11 03:28:03,696 - django.server - INFO - "POST /api/upload/ HTTP/1.1" 200 140
+2026-01-11 03:28:05,103 - django.server - INFO - "GET /api/results/b5ee5b00-b5a9-4d6f-a960-f3b1aa981f71/ HTTP/1.1" 200 1692
+2026-01-11 03:28:47,002 - django.server - INFO - "OPTIONS /medai/conversation/start/ HTTP/1.1" 200 0
+2026-01-11 03:28:49,791 - django.server - INFO - "POST /medai/conversation/start/ HTTP/1.1" 200 110
+2026-01-11 03:31:24,650 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:32:33,810 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 03:32:59,717 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 03:33:07,299 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 03:33:17,219 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 03:33:27,308 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 03:33:53,168 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 50
+2026-01-11 03:34:09,054 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 77
+2026-01-11 03:34:31,543 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 98
+2026-01-11 03:34:52,649 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 97
+2026-01-11 03:35:19,655 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 69
+2026-01-11 03:35:37,481 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 63
+2026-01-11 03:35:52,357 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 2616
+2026-01-11 03:39:05,568 - django.request - WARNING - Not Found: /media/reports/session_37_soap.pdf
+2026-01-11 03:39:05,570 - django.server - WARNING - "GET /media/reports/session_37_soap.pdf HTTP/1.1" 404 179
+2026-01-11 03:39:05,742 - django.request - WARNING - Not Found: /favicon.ico
+2026-01-11 03:39:05,745 - django.server - WARNING - "GET /favicon.ico HTTP/1.1" 404 179
+2026-01-11 03:39:11,357 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-11 03:39:11,358 - django.server - WARNING - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 179
+2026-01-11 03:41:06,252 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 03:41:10,157 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:41:29,652 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 03:41:31,486 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:41:46,851 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 03:41:48,618 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:41:53,741 - django.request - WARNING - Not Found: /media/reports/session_37_soap.pdf
+2026-01-11 03:41:53,742 - django.server - WARNING - "GET /media/reports/session_37_soap.pdf HTTP/1.1" 404 179
+2026-01-11 03:42:02,104 - django.request - WARNING - Not Found: /.well-known/appspecific/com.chrome.devtools.json
+2026-01-11 03:42:02,105 - django.server - WARNING - "GET /.well-known/appspecific/com.chrome.devtools.json HTTP/1.1" 404 179
+2026-01-11 03:42:50,266 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 03:42:52,042 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:43:16,360 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 03:43:18,203 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:43:28,617 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 03:43:30,743 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 03:43:44,414 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 03:43:51,022 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 03:43:59,281 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 03:44:07,839 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 03:44:25,253 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 03:44:38,162 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 49
+2026-01-11 03:44:54,909 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 62
+2026-01-11 03:45:29,271 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 75
+2026-01-11 03:45:47,149 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 78
+2026-01-11 03:46:14,799 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 148
+2026-01-11 03:46:39,311 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 72
+2026-01-11 03:46:54,348 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 53
+2026-01-11 03:47:12,621 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 03:47:30,780 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 95
+2026-01-11 03:47:46,220 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 63
+2026-01-11 03:48:01,129 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 03:48:23,061 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 68
+2026-01-11 03:48:52,004 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 82
+2026-01-11 03:49:20,302 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 101
+2026-01-11 03:49:54,756 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 93
+2026-01-11 03:50:33,665 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 82
+2026-01-11 03:50:58,810 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 102
+2026-01-11 03:51:30,610 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 160
+2026-01-11 03:51:54,207 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 63
+2026-01-11 03:52:10,088 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 2904
+2026-01-11 03:52:35,187 - django.server - INFO - "GET /medai/interview/pdf/38/ HTTP/1.1" 200 3397
+2026-01-11 04:00:38,776 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 04:01:09,448 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:01:12,860 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:01:12,873 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 48
+2026-01-11 04:01:15,701 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 61
+2026-01-11 04:01:18,136 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:01:29,385 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3355
+2026-01-11 04:02:19,506 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 04:02:24,172 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 04:02:46,914 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 04:02:49,440 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 04:03:19,160 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 04:03:23,656 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 54
+2026-01-11 04:04:19,315 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 04:04:29,508 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:04:31,330 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:04:31,344 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 87
+2026-01-11 04:04:48,420 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:04:51,974 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:04:51,980 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 74
+2026-01-11 04:07:57,524 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\symptom_extractor.py changed, reloading.
+2026-01-11 04:08:01,334 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 04:09:16,498 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 84
+2026-01-11 04:09:35,946 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:09:40,925 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:09:40,933 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 131
+2026-01-11 04:10:52,947 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\symptom_extractor.py changed, reloading.
+2026-01-11 04:10:56,601 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 04:11:38,870 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\triage_agent.py changed, reloading.
+2026-01-11 04:11:40,750 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 04:11:49,859 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:11:52,629 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:11:52,640 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 71
+2026-01-11 04:12:07,400 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:12:13,509 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:12:13,516 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 77
+2026-01-11 04:13:28,154 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:13:31,388 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:13:31,396 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 71
+2026-01-11 04:13:35,040 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 04:13:37,391 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:13:50,895 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3809
+2026-01-11 04:14:27,107 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:14:32,257 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:14:32,277 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 74
+2026-01-11 04:14:38,735 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 62
+2026-01-11 04:15:27,412 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:15:32,592 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:15:32,600 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 114
+2026-01-11 04:15:34,924 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 04:17:01,097 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:17:04,493 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:17:04,510 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 117
+2026-01-11 04:17:11,660 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 60
+2026-01-11 04:17:19,990 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:17:25,989 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 04:17:36,586 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:17:47,750 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 04:18:04,163 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 67
+2026-01-11 04:18:14,389 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 66
+2026-01-11 04:18:31,023 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 67
+2026-01-11 04:18:51,881 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 91
+2026-01-11 04:19:12,327 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 79
+2026-01-11 04:19:27,067 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 48
+2026-01-11 04:19:46,180 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 108
+2026-01-11 04:20:03,358 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 112
+2026-01-11 04:20:25,536 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 84
+2026-01-11 04:20:52,110 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 128
+2026-01-11 04:21:20,903 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 117
+2026-01-11 04:21:40,127 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 81
+2026-01-11 04:22:01,110 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 04:22:13,762 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:22:31,194 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 90
+2026-01-11 04:22:45,540 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 40
+2026-01-11 04:22:59,999 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 04:23:24,680 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 110
+2026-01-11 04:23:34,690 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 143
+2026-01-11 04:23:50,787 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 163
+2026-01-11 04:24:08,816 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 85
+2026-01-11 04:24:20,918 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 51
+2026-01-11 04:24:42,735 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 69
+2026-01-11 04:24:59,115 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 96
+2026-01-11 04:25:19,344 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:25:31,099 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 53
+2026-01-11 04:25:51,951 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:26:04,521 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 66
+2026-01-11 04:26:30,667 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 78
+2026-01-11 04:26:46,858 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 73
+2026-01-11 04:27:05,526 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 66
+2026-01-11 04:27:28,976 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 100
+2026-01-11 04:27:44,273 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 49
+2026-01-11 04:27:56,361 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 04:28:17,757 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:28:41,467 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 75
+2026-01-11 04:29:01,043 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 73
+2026-01-11 04:29:17,651 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 66
+2026-01-11 04:29:42,050 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 38
+2026-01-11 04:30:21,658 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:30:25,115 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:30:25,140 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 71
+2026-01-11 04:30:29,940 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 69
+2026-01-11 04:30:32,411 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:30:45,769 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3943
+2026-01-11 04:32:10,983 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:32:15,277 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:32:15,296 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 129
+2026-01-11 04:32:22,793 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 70
+2026-01-11 04:33:02,767 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:33:14,641 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 04:33:23,567 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:33:30,202 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 04:33:39,332 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 52
+2026-01-11 04:33:57,109 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 67
+2026-01-11 04:34:06,700 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 57
+2026-01-11 04:34:28,138 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 103
+2026-01-11 04:34:45,961 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 68
+2026-01-11 04:35:07,633 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 38
+2026-01-11 04:35:50,593 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 64
+2026-01-11 04:37:07,839 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 67
+2026-01-11 04:37:16,829 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:37:23,958 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 04:37:33,366 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:37:39,805 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 04:37:51,986 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 55
+2026-01-11 04:38:08,210 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 65
+2026-01-11 04:38:22,978 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 52
+2026-01-11 04:38:36,410 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 86
+2026-01-11 04:38:55,907 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 93
+2026-01-11 04:39:14,540 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 77
+2026-01-11 04:39:36,295 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:40:17,756 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 04:40:33,542 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 76
+2026-01-11 04:41:01,249 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 33
+2026-01-11 04:41:26,556 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 69
+2026-01-11 04:41:40,617 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 55
+2026-01-11 04:41:59,189 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 68
+2026-01-11 04:42:14,454 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 91
+2026-01-11 04:42:38,517 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 92
+2026-01-11 04:43:00,958 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:43:16,217 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 72
+2026-01-11 04:43:49,884 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 90
+2026-01-11 04:44:16,833 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 52
+2026-01-11 04:44:44,635 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 108
+2026-01-11 04:44:59,624 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 82
+2026-01-11 04:45:56,217 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 89
+2026-01-11 04:46:15,932 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 2754
+2026-01-11 04:47:48,106 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:47:52,506 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:47:52,513 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 90
+2026-01-11 04:47:57,387 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 57
+2026-01-11 04:48:05,369 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 04:48:10,568 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 04:48:17,779 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 04:48:25,241 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 04:48:36,257 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 64
+2026-01-11 04:48:46,067 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 52
+2026-01-11 04:49:22,469 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 54
+2026-01-11 04:53:12,676 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 2340
+2026-01-11 04:53:32,166 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 04:56:12,644 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 04:56:15,621 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 04:56:15,638 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 157
+2026-01-11 04:56:24,962 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 44
+2026-01-11 04:59:26,794 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 04:59:30,847 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 04:59:41,458 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 04:59:43,190 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 04:59:47,524 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\serializers.py changed, reloading.
+2026-01-11 04:59:49,290 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 05:00:53,130 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\views.py changed, reloading.
+2026-01-11 05:00:54,920 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 07:25:40,714 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 07:26:22,507 - django.server - INFO - "OPTIONS /medai/interview/triage/ HTTP/1.1" 200 0
+2026-01-11 07:26:24,376 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 07:26:24,386 - django.server - INFO - "OPTIONS /medai/interview/start/ HTTP/1.1" 200 0
+2026-01-11 07:26:26,800 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 61
+2026-01-11 07:26:48,563 - django.server - INFO - "OPTIONS /medai/interview/answer/ HTTP/1.1" 200 0
+2026-01-11 07:26:51,284 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 07:27:08,896 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 07:27:14,033 - django.server - INFO - "OPTIONS /medai/interview/summary/ HTTP/1.1" 200 0
+2026-01-11 07:27:33,573 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3993
+2026-01-11 07:28:20,267 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 68
+2026-01-11 07:32:30,215 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 48
+2026-01-11 07:32:41,792 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 07:33:28,384 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 60
+2026-01-11 07:47:10,852 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 07:47:15,764 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 07:47:34,700 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 07:52:02,188 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3232
+2026-01-11 07:55:23,393 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 07:55:25,144 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 07:55:25,175 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 87
+2026-01-11 07:55:28,194 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 61
+2026-01-11 07:55:30,655 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 07:55:43,441 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3502
+2026-01-11 07:57:16,789 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 07:57:20,470 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 07:57:20,497 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 07:57:24,035 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 61
+2026-01-11 07:57:26,866 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 07:57:39,827 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3543
+2026-01-11 08:21:36,078 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 08:21:42,238 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 08:21:50,341 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 08:21:58,411 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 08:22:11,639 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 55
+2026-01-11 08:24:05,426 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 90
+2026-01-11 08:24:18,947 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 80
+2026-01-11 08:24:32,452 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 65
+2026-01-11 08:24:44,229 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 81
+2026-01-11 08:25:03,072 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 62
+2026-01-11 08:25:22,317 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3756
+2026-01-11 08:27:26,702 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\medai\settings.py changed, reloading.
+2026-01-11 08:27:32,563 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 08:29:35,998 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 69
+2026-01-11 08:30:36,725 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 61
+2026-01-11 08:30:50,791 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 08:30:56,957 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 08:31:08,426 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 106
+2026-01-11 08:31:20,142 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 74
+2026-01-11 08:31:36,632 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 56
+2026-01-11 08:31:48,646 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 57
+2026-01-11 08:32:07,504 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3021
+2026-01-11 08:33:07,035 - django.server - INFO - "GET /medai/interview/pdf/61/ HTTP/1.1" 200 3637
+2026-01-11 08:33:07,310 - django.request - WARNING - Not Found: /favicon.ico
+2026-01-11 08:33:07,311 - django.server - WARNING - "GET /favicon.ico HTTP/1.1" 404 179
+2026-01-11 08:34:08,593 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\agent.py changed, reloading.
+2026-01-11 08:34:14,167 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 08:34:36,754 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\agent.py changed, reloading.
+2026-01-11 08:34:40,483 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 08:34:54,232 - django.utils.autoreload - INFO - C:\Users\Hassan Khan\Desktop\Main-Project\backend\ai-hackathon-techverse2-team-delta\backend\interviews\agent.py changed, reloading.
+2026-01-11 08:34:57,570 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 08:35:37,110 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 08:35:43,358 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 08:35:48,287 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 08:35:55,293 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 08:36:08,253 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 63
+2026-01-11 08:36:23,608 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 90
+2026-01-11 08:36:39,043 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3009
+2026-01-11 08:36:50,899 - django.server - INFO - "GET /medai/interview/pdf/62/ HTTP/1.1" 200 6333
+2026-01-11 08:37:50,178 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 08:37:52,790 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 08:37:52,807 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 68
+2026-01-11 08:37:55,441 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 08:37:58,326 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 08:38:09,900 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3631
+2026-01-11 08:40:10,202 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 08:40:15,950 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 08:40:15,969 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 71
+2026-01-11 08:40:18,438 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 42
+2026-01-11 08:40:20,951 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 08:40:34,009 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 2968
+2026-01-11 08:41:29,963 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 08:41:33,213 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 08:41:33,241 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 71
+2026-01-11 08:41:36,127 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 69
+2026-01-11 08:41:38,891 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 08:41:54,828 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 3100
+2026-01-11 08:47:21,266 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 08:47:25,412 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 08:47:25,425 - django.server - INFO - "POST /medai/interview/triage/ HTTP/1.1" 200 81
+2026-01-11 08:47:28,497 - django.server - INFO - "POST /medai/interview/start/ HTTP/1.1" 200 61
+2026-01-11 08:47:41,585 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 71
+2026-01-11 08:47:47,635 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 58
+2026-01-11 08:47:53,725 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 83
+2026-01-11 08:48:00,329 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 87
+2026-01-11 08:48:13,333 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 50
+2026-01-11 08:48:45,476 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 60
+2026-01-11 08:49:16,775 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 90
+2026-01-11 08:49:36,580 - django.server - INFO - "POST /medai/interview/answer/ HTTP/1.1" 200 78
+2026-01-11 08:49:54,296 - django.server - INFO - "POST /medai/interview/summary/ HTTP/1.1" 200 2226
+2026-01-11 08:52:23,719 - django.server - INFO - "OPTIONS /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 0
+2026-01-11 08:52:26,374 - medication_interaction.views - INFO - Calling medication interaction agent with 4 medications
+2026-01-11 08:52:26,376 - medication_interaction.agent - INFO - Medication interaction check | Current: Aspirin, Amoxicillin | New: ibprufin, Heparin
+2026-01-11 08:52:29,557 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 08:52:37,586 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 08:52:37,586 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: CONTRAINDICATED
+2026-01-11 08:52:37,602 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 08:52:37,602 - medication_interaction.views - INFO - Agent severity: CONTRAINDICATED
+2026-01-11 08:52:37,926 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 52
+2026-01-11 08:52:37,927 - medication_interaction.views - INFO - Response data size: 1301 bytes
+2026-01-11 08:52:37,927 - medication_interaction.views - INFO - Response severity: CONTRAINDICATED
+2026-01-11 08:52:37,927 - medication_interaction.views - INFO - Response findings count: 3
+2026-01-11 08:52:37,927 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 08:52:37,936 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 1254
+2026-01-11 11:21:35,897 - django.utils.autoreload - INFO - Watching for file changes with StatReloader
+2026-01-11 11:23:49,336 - django.server - INFO - "OPTIONS /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 0
+2026-01-11 11:23:51,462 - medication_interaction.views - INFO - Calling medication interaction agent with 3 medications
+2026-01-11 11:23:51,463 - medication_interaction.agent - INFO - Medication interaction check | Current: Panadol, Disprine | New: Paracetamol
+2026-01-11 11:23:54,091 - google_genai.models - INFO - AFC is enabled with max remote calls: 10.
+2026-01-11 11:24:05,146 - httpx - INFO - HTTP Request: POST https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent "HTTP/1.1 200 OK"
+2026-01-11 11:24:05,150 - medication_interaction.agent - INFO - Interaction analysis complete | Severity: MAJOR
+2026-01-11 11:24:05,156 - medication_interaction.views - INFO - Agent returned analysis with keys: ['severity', 'interaction_graph', 'findings', 'soap_note']
+2026-01-11 11:24:05,158 - medication_interaction.views - INFO - Agent severity: MAJOR
+2026-01-11 11:24:05,355 - medication_interaction.views - INFO - Medication interaction analysis completed successfully for session 54
+2026-01-11 11:24:05,356 - medication_interaction.views - INFO - Response data size: 1207 bytes
+2026-01-11 11:24:05,358 - medication_interaction.views - INFO - Response severity: MAJOR
+2026-01-11 11:24:05,359 - medication_interaction.views - INFO - Response findings count: 3
+2026-01-11 11:24:05,360 - medication_interaction.views - INFO - Response interaction_graph keys: ['drug_drug', 'drug_disease', 'drug_food']
+2026-01-11 11:24:05,363 - django.server - INFO - "POST /medai/medication_interaction/analyze_interaction/ HTTP/1.1" 200 1172
