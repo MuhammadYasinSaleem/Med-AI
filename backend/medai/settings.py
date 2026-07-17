@@ -230,7 +230,7 @@ CELERY_TIMEZONE = TIME_ZONE
 # -------------------------------------------------------------------
 
 # Universal API Key (paid)
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', 'AIzaSyB8tF9bjsK1hNpzIG74uBOSIQKs77VGx9g')
+GEMINI_API_KEY = os.getenv('GEMINI_API_KEY')
 GOOGLE_API_KEY = GEMINI_API_KEY  # Alias for compatibility
 
 
