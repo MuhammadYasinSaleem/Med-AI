@@ -1,0 +1,224 @@
+{% extends 'base.html' %}
+
+{% block title %}Upload Lab Report - Lab Report Analyzer{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-8 mx-auto">
+        <h2 class="mb-4">
+            <i class="fas fa-upload text-primary"></i> Upload Lab Report
+        </h2>
+        
+        <form method="post" enctype="multipart/form-data" id="upload-form">
+            {% csrf_token %}
+            
+            <div class="card mb-4">
+                <div class="card-header bg-primary text-white">
+                    <h5 class="mb-0"><i class="fas fa-user"></i> Patient Information</h5>
+                </div>
+                <div class="card-body">
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.patient_name.id_for_label }}" class="form-label">
+                                Patient Name <span class="text-danger">*</span>
+                            </label>
+                            {{ form.patient_name }}
+                            {% if form.patient_name.errors %}
+                                <div class="text-danger small">{{ form.patient_name.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-3 mb-3">
+                            <label for="{{ form.age.id_for_label }}" class="form-label">
+                                Age <span class="text-danger">*</span>
+                            </label>
+                            {{ form.age }}
+                            {% if form.age.errors %}
+                                <div class="text-danger small">{{ form.age.errors }}</div>
+                            {% endif %}
+                        </div>
+                        
+                        <div class="col-md-3 mb-3">
+                            <label for="{{ form.gender.id_for_label }}" class="form-label">
+                                Gender <span class="text-danger">*</span>
+                            </label>
+                            {{ form.gender }}
+                            {% if form.gender.errors %}
+                                <div class="text-danger small">{{ form.gender.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <label for="{{ form.preferred_language.id_for_label }}" class="form-label">
+                                <i class="fas fa-language"></i> Preferred Language <span class="text-danger">*</span>
+                            </label>
+                            {{ form.preferred_language }}
+                            {% if form.preferred_language.help_text %}
+                                <small class="form-text text-muted">{{ form.preferred_language.help_text }}</small>
+                            {% endif %}
+                            {% if form.preferred_language.errors %}
+                                <div class="text-danger small">{{ form.preferred_language.errors }}</div>
+                            {% endif %}
+                        </div>
+                    </div>
+                    
+                    <div class="mb-3" id="pregnancy-field">
+                        <div class="form-check">
+                            {{ form.is_pregnant }}
+                            <label class="form-check-label" for="{{ form.is_pregnant.id_for_label }}">
+                                {{ form.is_pregnant.label }}
+                            </label>
+                            {% if form.is_pregnant.help_text %}
+                                <small class="form-text text-muted">{{ form.is_pregnant.help_text }}</small>
+                            {% endif %}
+                        </div>
+                        {% if form.is_pregnant.errors %}
+                            <div class="text-danger small">{{ form.is_pregnant.errors }}</div>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mb-3">
+                        <label for="{{ form.contact.id_for_label }}" class="form-label">Contact (Optional)</label>
+                        {{ form.contact }}
+                        {% if form.contact.errors %}
+                            <div class="text-danger small">{{ form.contact.errors }}</div>
+                        {% endif %}
+                    </div>
+                </div>
+            </div>
+            
+            <div class="card mb-4">
+                <div class="card-header bg-success text-white">
+                    <h5 class="mb-0"><i class="fas fa-file-medical"></i> Lab Report File</h5>
+                </div>
+                <div class="card-body">
+                    <div class="upload-area" id="upload-area">
+                        <i class="fas fa-cloud-upload-alt fa-3x text-muted mb-3"></i>
+                        <p class="text-muted">Drag and drop your lab report here, or click to browse</p>
+                        <input type="file" 
+                               name="{{ form.file.name }}" 
+                               id="{{ form.file.id_for_label }}"
+                               class="d-none"
+                               accept=".pdf,.jpg,.jpeg,.png"
+                               required>
+                        <button type="button" class="btn btn-primary" onclick="document.getElementById('{{ form.file.id_for_label }}').click()">
+                            <i class="fas fa-folder-open"></i> Choose File
+                        </button>
+                        <p class="text-muted small mt-2">
+                            Supported formats: PDF, JPG, JPEG, PNG (max 10MB)
+                        </p>
+                    </div>
+                    
+                    <div id="file-info" class="mt-3" style="display: none;">
+                        <div class="alert alert-info">
+                            <i class="fas fa-file"></i> <span id="file-name"></span>
+                            <span class="float-end"><span id="file-size"></span></span>
+                        </div>
+                    </div>
+                    
+                    {% if form.file.errors %}
+                        <div class="text-danger small mt-2">{{ form.file.errors }}</div>
+                    {% endif %}
+                </div>
+            </div>
+            
+            <div class="d-grid gap-2">
+                <button type="submit" class="btn btn-primary btn-lg">
+                    <i class="fas fa-paper-plane"></i> Upload and Analyze
+                </button>
+            </div>
+        </form>
+        
+        {% if recent_reports %}
+        <div class="mt-5">
+            <h4 class="mb-3"><i class="fas fa-history"></i> Recent Reports</h4>
+            <div class="list-group">
+                {% for report in recent_reports %}
+                <a href="{% url 'lab_analyzer:status' report.id %}" class="list-group-item list-group-item-action" style="background: var(--bg-secondary); border: 1px solid rgba(59, 130, 246, 0.2); color: var(--text-primary); border-radius: 10px; margin-bottom: 0.5rem;">
+                    <div class="d-flex w-100 justify-content-between">
+                        <h6 class="mb-1">{{ report.patient.name }}</h6>
+                        <small class="text-muted">{{ report.uploaded_at|timesince }} ago</small>
+                    </div>
+                    <p class="mb-1 text-muted small">{{ report.original_filename }}</p>
+                    <span class="status-badge status-{{ report.status }}">
+                        {{ report.get_status_display }}
+                    </span>
+                </a>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+
+<script>
+    // File input handling
+    const fileInput = document.getElementById('{{ form.file.id_for_label }}');
+    const uploadArea = document.getElementById('upload-area');
+    const fileInfo = document.getElementById('file-info');
+    const fileName = document.getElementById('file-name');
+    const fileSize = document.getElementById('file-size');
+    
+    fileInput.addEventListener('change', function(e) {
+        const file = e.target.files[0];
+        if (file) {
+            fileName.textContent = file.name;
+            fileSize.textContent = (file.size / 1024 / 1024).toFixed(2) + ' MB';
+            fileInfo.style.display = 'block';
+        }
+    });
+    
+    // Drag and drop
+    uploadArea.addEventListener('dragover', function(e) {
+        e.preventDefault();
+        uploadArea.classList.add('dragover');
+    });
+    
+    uploadArea.addEventListener('dragleave', function(e) {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+    });
+    
+    uploadArea.addEventListener('drop', function(e) {
+        e.preventDefault();
+        uploadArea.classList.remove('dragover');
+        const files = e.dataTransfer.files;
+        if (files.length > 0) {
+            fileInput.files = files;
+            fileInput.dispatchEvent(new Event('change'));
+        }
+    });
+    
+    uploadArea.addEventListener('click', function() {
+        fileInput.click();
+    });
+    
+    // Hide/show pregnancy field based on gender
+    const genderSelect = document.getElementById('{{ form.gender.id_for_label }}');
+    const pregnancyField = document.getElementById('pregnancy-field');
+    const pregnancyCheckbox = document.getElementById('{{ form.is_pregnant.id_for_label }}');
+    
+    function togglePregnancyField() {
+        const selectedGender = genderSelect.value;
+        if (selectedGender === 'M') {
+            // Hide pregnancy field for males
+            pregnancyField.style.display = 'none';
+            // Uncheck the checkbox to prevent invalid data
+            if (pregnancyCheckbox) {
+                pregnancyCheckbox.checked = false;
+            }
+        } else {
+            // Show pregnancy field for females and others
+            pregnancyField.style.display = 'block';
+        }
+    }
+    
+    // Check on page load
+    togglePregnancyField();
+    
+    // Listen for gender changes
+    genderSelect.addEventListener('change', togglePregnancyField);
+</script>
+{% endblock %}

@@ -1,0 +1,173 @@
+{% extends 'base.html' %}
+
+{% block title %}Analysis Results - Lab Report Analyzer{% endblock %}
+
+{% block content %}
+<div class="row">
+    <div class="col-lg-10 mx-auto">
+        <div class="d-flex justify-content-between align-items-center mb-4">
+            <h2>
+                <i class="fas fa-chart-line text-primary"></i> Analysis Results
+            </h2>
+            <div>
+                <a href="{% url 'lab_analyzer:download_summary' report_id=lab_report.id %}" class="btn btn-success me-2">
+                    <i class="fas fa-file-pdf"></i> Download PDF Summary
+                </a>
+                <a href="{% url 'lab_analyzer:home' %}" class="btn btn-outline-primary">
+                    <i class="fas fa-arrow-left"></i> Back to Upload
+                </a>
+            </div>
+        </div>
+        
+        <!-- Patient Info Card -->
+        <div class="card mb-4">
+            <div class="card-header bg-primary text-white">
+                <h5 class="mb-0"><i class="fas fa-user"></i> Patient Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-3"><strong>Name:</strong> {{ lab_report.patient.name }}</div>
+                    <div class="col-md-3"><strong>Age:</strong> {{ lab_report.patient.age }} years</div>
+                    <div class="col-md-3"><strong>Gender:</strong> {{ lab_report.patient.get_gender_display }}</div>
+                    <div class="col-md-3"><strong>Language:</strong> {{ lab_report.patient.get_preferred_language_display }}</div>
+                </div>
+                <div class="row mt-2">
+                    <div class="col-md-12"><strong>Report:</strong> {{ lab_report.original_filename }}</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Humanistic Summary -->
+        {% if humanistic_summary %}
+        <div class="card mb-4 border-info">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-comment-medical"></i> Summary</h5>
+            </div>
+            <div class="card-body">
+                <div class="summary-text" style="white-space: pre-line;">{{ humanistic_summary }}</div>
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Critical Findings -->
+        {% if critical_findings %}
+        <div class="card mb-4 border-danger">
+            <div class="card-header bg-danger text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-exclamation-triangle"></i> 
+                    CRITICAL FINDINGS ({{ critical_findings|length }})
+                </h5>
+            </div>
+            <div class="card-body">
+                {% for finding in critical_findings %}
+                <div class="critical-alert mb-3 p-3 border border-danger rounded">
+                    <h6 class="mb-2">
+                        <i class="fas fa-exclamation-circle"></i> 
+                        <strong>{{ finding.test|default:"Unknown" }}:</strong> {{ finding.value|default:"N/A" }} | Range: {{ finding.reference_range|default:"N/A" }}
+                    </h6>
+                    <p class="mb-1 small">{{ finding.explanation|default:"Critical value detected" }}</p>
+                    {% if finding.immediate_actions %}
+                    <p class="mb-1 small"><strong>Actions:</strong> {{ finding.immediate_actions|join:", " }}</p>
+                    {% endif %}
+                    {% if finding.time_sensitivity %}
+                    <span class="badge bg-danger">{{ finding.time_sensitivity }}</span>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Abnormal Findings -->
+        {% if abnormal_findings %}
+        <div class="card mb-4">
+            <div class="card-header bg-warning text-dark">
+                <h5 class="mb-0">
+                    <i class="fas fa-exclamation-circle"></i> 
+                    Abnormal Findings ({{ abnormal_findings|length }})
+                </h5>
+            </div>
+            <div class="card-body">
+                {% for finding in abnormal_findings %}
+                <div class="abnormal-alert mb-2 p-2 border-start border-warning border-3 ps-3">
+                    <h6 class="mb-1">
+                        <strong>{{ finding.test|default:"Unknown" }}:</strong> {{ finding.value|default:"N/A" }} 
+                        <span class="badge bg-warning text-dark ms-2">{{ finding.severity|default:"ABNORMAL" }}</span>
+                        <span class="text-muted small ms-2">(Range: {{ finding.reference_range|default:"N/A" }})</span>
+                    </h6>
+                    <p class="mb-0 small">{{ finding.explanation|default:"Abnormal value detected" }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Normal Findings -->
+        {% if normal_findings %}
+        <div class="card mb-4">
+            <div class="card-header bg-success text-white">
+                <h5 class="mb-0">
+                    <i class="fas fa-check-circle"></i> 
+                    Normal Findings ({{ normal_findings|length }})
+                </h5>
+            </div>
+            <div class="card-body">
+                {% for finding in normal_findings %}
+                <span class="normal-badge">
+                    <i class="fas fa-check"></i> {{ finding.test|default:"Unknown" }}: {{ finding.value|default:"N/A" }}
+                </span>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- SOAP Note -->
+        {% if soap_note %}
+        <div class="card mb-4">
+            <div class="card-header bg-info text-white">
+                <h5 class="mb-0"><i class="fas fa-stethoscope"></i> Clinical Summary (SOAP Note)</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-6 mb-2">
+                        <strong class="text-primary">S:</strong> <span class="small">{{ soap_note.subjective|default:"N/A" }}</span>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <strong class="text-info">O:</strong> <span class="small">{{ soap_note.objective|default:"N/A" }}</span>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <strong class="text-warning">A:</strong> <span class="small">{{ soap_note.assessment|default:"N/A" }}</span>
+                    </div>
+                    <div class="col-md-6 mb-2">
+                        <strong class="text-success">P:</strong> <span class="small">{{ soap_note.plan|default:"N/A" }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Metadata -->
+        {% if metadata %}
+        <div class="card">
+            <div class="card-header bg-secondary text-white">
+                <h5 class="mb-0"><i class="fas fa-info-circle"></i> Processing Information</h5>
+            </div>
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-md-4"><strong>Processed At:</strong> {{ analysis.generated_at|date:"M d, Y H:i" }}</div>
+                    <div class="col-md-4"><strong>Processing Time:</strong> {{ analysis.processing_time|floatformat:2 }}s</div>
+                    <div class="col-md-4"><strong>Model:</strong> {{ metadata.llm_model|default:"gpt-4" }}</div>
+                </div>
+                {% if metadata.safety_checks_passed %}
+                <div class="mt-2">
+                    <span class="badge bg-success">
+                        <i class="fas fa-shield-alt"></i> Safety Checks Passed
+                    </span>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        {% endif %}
+    </div>
+</div>
+{% endblock %}
